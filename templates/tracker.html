@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price tracker</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="page-container">
+
+        <div class="header">
+          <h2>Hi, {{username}}!</h2>
+          <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+        </div>
+
+        <div class="form-container">
+          <form>
+            <label for="url-input">Product URL:</label>
+            <input type="text" id="url-input" name="url" required>
+
+            <label for="price-input">Target Price:</label>
+            <input type="number" id="price-input" name="price" required>
+
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+      
+</body>
+</html>
