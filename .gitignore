@@ -128,6 +128,9 @@ ENV/
 env.bak/
 venv.bak/
 
+db.sqlite3
+settings.py
+git add <app1>/migrations/
 # Spyder project settings
 .spyderproject
 .spyproject
