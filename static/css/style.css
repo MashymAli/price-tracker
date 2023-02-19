@@ -3,118 +3,119 @@ body {
     text-align: center;
     background-color: #171c28;
     color: #fff;
-  }
+}
 
 
-  h1 {
-    font-size: 3em;
-    margin-top: 0.5em;
-    color: #28a745;
-  }
-
-  .btn {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    margin: 1em;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-  }
-
-  img{
-    width: 100px;
-    height: 100px;
-  }
+h1 {
+  font-size: 3em;
+  margin-top: 0.5em;
+  color: #28a745;
+}
+.btn {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  margin: 1em;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: #0056b3;
+}
+img{
+  width: 100px;
+  height: 100px;
+}
 
  /*Sign up*/ 
-  .signup-container {
-    background-color: #202a3a;
-    padding: 2em;
-    border-radius: 5px;
-    max-width: 600px;
-    margin: 5rem auto;
-  }
-  
-  h2 {
-    color: #28a745;
-    margin-bottom: 1em;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-   
-  }
-  
-  label {
-    color: #fff;
-    margin-bottom: 0.5em;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    padding: 0.5em;
-    border: none;
-    border-radius: 3px;
-    margin-bottom: 1em;
-  }
-  
-  input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 0.8em;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
+.signup-container {
+  background-color: #202a3a;
+  padding: 2em;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 5rem auto;
+}
 
+h2 {
+  color: #28a745;
+  margin-bottom: 1em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+label {
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 0.5em;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
+
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.8em;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  display: block;
+  margin: auto;
+  
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
 
 /*LOGIN*/
-  .login-container {
-    background-color: #202a3a;
-    padding: 2em;
-    border-radius: 5px;
-    max-width: 600px;
-    margin: 5rem auto;
-  }
-  
-  .login-container h2 {
-    color: #28a745;
-    margin-bottom: 1em;
-  }
-  
-  .login-container form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login-container label {
-    color: #fff;
-    margin-bottom: 0.5em;
-  }
-  
-  .login-container input[type="email"],
-  .login-container input[type="password"] {
-    padding: 0.5em;
-    border: none;
-    border-radius: 3px;
-    margin-bottom: 1em;
-  }
+.login-container {
+  background-color: #202a3a;
+  padding: 2em;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 5rem auto;
+}
+
+.login-container h2 {
+  color: #28a745;
+  margin-bottom: 1em;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container label {
+  color: #fff;
+  margin-bottom: 0.5em;
+}
+
+.ogin-container input[type="email"],
+.login-container input[type="password"] {
+  padding: 0.5em;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 1em;
+}
   
  /*Tracker main page*/ 
- .page-container {
+.page-container {
   background-color: #202a3a;
-  height: 100vh;
+  /*height: 100vh;*/
   padding: 2em;
 }
 
@@ -165,7 +166,7 @@ input[type="number"] {
 
 
 /* Style for logout button */
-.logout-btn {
+.logout-btn , #dlt_btn{
   background-color: #ff4d4d; /* red background color */
   color: #fff; /* white text color */
   padding: 10px 20px; /* add padding to make button more clickable */
@@ -178,6 +179,8 @@ input[type="number"] {
 .logout-btn:hover {
   background-color: #f43c3c; /* darken the color on hover */
 }
+
+
 
 
 /* Set custom scrollbar styles */
@@ -198,13 +201,82 @@ input[type="number"] {
   background-color: #34907c;
 }
 
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  @media screen and (max-width: 600px) {
-    h1 {
-      font-size: 2em;
-    }
+table {
+  margin-top: 3rem;
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #000;
+}
 
-    .btn {
-      font-size: 0.8em;
-    }
+th {
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+}
+
+td {
+  word-wrap: break-word;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 14px;
+}
+
+td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+td:nth-child(4) {
+  max-width: 200px;
+  overflow-x: auto;
+}
+
+@media (max-width: 1024px) {
+  .table-container {
+    flex-direction: column;
   }
+}
+
+@media (max-width: 768px) {
+  td, th {
+    font-size: 12px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  td, th {
+    font-size: 10px;
+    padding: 2px;
+  }
+}
+
+@media (max-width: 350px) {
+  td, th {
+    font-size: 9px;
+    padding: 1px;
+  }
+}
+
+
+
+/* Adjust the size of the delete button on small screens */
+@media screen and (max-width: 600px) {
+  button[type="submit"] {
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 2em;
+  }
+  .btn {
+    font-size: 0.8em;
+  }
+}

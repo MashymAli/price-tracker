@@ -18,16 +18,57 @@
         </div>
 
         <div class="form-container">
-          <form>
+          <h2>Track your product's price</h2>
+          <form method="POST">
+            {% csrf_token %}
             <label for="url-input">Product URL:</label>
-            <input type="text" id="url-input" name="url" required>
+            <input type="text" id="url-input" name="url" placeholder="Enter product URL here" required>
 
             <label for="price-input">Target Price:</label>
-            <input type="number" id="price-input" name="price" required>
+            <input type="number" id="price-input" name="target_price" placeholder="Enter affordable price for you" required>
 
             <input type="submit" value="Submit">
           </form>
         </div>
+
+        
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Product URL</th>
+                <th>Target Price</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for product in products %}
+              <tr>
+                <td>Toys</td>
+                <td>{{ product.url }}</td>
+                <td>{{ product.target_price }}</td>
+                <td>
+                  <form method="POST" action="{% url 'delete_product' product.id %}">
+                    {% csrf_token %}
+                    <button type="submit" id="dlt_btn">Delete</button>
+                  </form>
+                </td>
+              </tr>
+              
+              {% empty %}
+              <tr>
+                <td colspan="4">No products added yet.</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+
+          </table>
+        </div>
+        
+
       </div>
       
 </body>

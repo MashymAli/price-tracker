@@ -24,4 +24,5 @@ urlpatterns = [
     path('signup/',views.SignUpPage,name='signup'),
     path('tracker/',views.MainPage,name='tracker'),
     path('logout/',views.LogOutPage,name='logout'),
+    path('tracker/delete/<int:product_id>/',views.delete_product,name='delete_product'),
 ]

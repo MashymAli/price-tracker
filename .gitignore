@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development settings
+*/settings/local.py
+
+# Database files
+db.sqlite3
+*.sqlite3
+
+# Media files
+/media
+
+# Static files
+/static
+
+# Other Django-specific files
+*.log
+*.pot
+*.pyc
+*.swp
+*.mo
+
+# IDE-specific files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Ignore all files in the migrations directories
+**/migrations/*
+
+# Ignore pipenv virtual environment
+/.env
