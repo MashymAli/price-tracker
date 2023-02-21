@@ -1,0 +1,35 @@
+settings.py
+db.sqlite3
+
+# Ignore secret keys and database credentials
+*.env
+*.env.*
+*.sqlite3
+
+# Ignore media files and cache files
+/media/
+/static/images/
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore logs and temporary files
+*.log
+*.swp
+*.swo
+*.bak
+*.tmp
+*.pid
+
+# Ignore IDE files and directories
+.vscode/
+.idea/
+
+# Ignore dependencies
+/venv/
+/site/
+/dist/
+/build/
+
+# Ignore configuration files
+*.conf
