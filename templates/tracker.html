@@ -29,6 +29,10 @@
 
             <input type="submit" value="Submit">
           </form>
+          <!--{% if product_added %}
+            <p style="color:red;">You can only track one product at a time. Please delete the existing product before adding a new one.</p>
+          {% endif %}-->
+          <p style="color:red;">{{ error_msg }}</p>
         </div>
 
         
@@ -47,7 +51,7 @@
             <tbody>
               {% for product in products %}
               <tr>
-                <td>Toys</td>
+                <td>{{product.name}}</td>
                 <td>{{ product.url }}</td>
                 <td>{{ product.target_price }}</td>
                 <td>

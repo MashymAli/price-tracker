@@ -14,10 +14,12 @@
         <form method='post'>
           {% csrf_token %}
           <label for="username">Username:</label>
-          <input type="text" id="username" name="username" required>
+          <input type="text" id="username" name="name" required>
 
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required>
+
+          <a style="color:white; text-align:left" href="{% url 'signup' %}">Don't have an account?</a>
 
           <input type="submit" value="Log In">
           <label  style="color: red; margin-top: 20px;">{{error_label}}</label>

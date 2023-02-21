@@ -13,17 +13,22 @@
         <h2>Sign Up</h2>
         <form method='post' action=''>
           {% csrf_token %}
-          <label for="fname">First Name:</label>
-          <input type="text" id="fname" name="fname" required>
-
-          <label for="lname">Last Name:</label>
-          <input type="text" id="lname" name="lname" required>
+          <label for="name">Username:</label>
+          <input type="text" id="name" name="name" required>
+          {% if error_message %}
+            <p style="color:red; text-align:left; margin-top:-0.6rem" class="error-message">{{ error_message }}</p>
+          {% endif %}
 
           <label for="email">Email:</label>
           <input type="email" id="email" name="email" required>
+          {% if error_message2 %}
+            <p style="color:red; text-align:left; margin-top:-0.6rem" class="error-message">{{ error_message2 }}</p>
+          {% endif %}
 
           <label for="password">Password:</label>
           <input type="password" id="password" name="password" required>
+
+          <a style="color:white; text-align:left" href="{% url 'login' %}">Already have an account?</a>
 
           <input type="submit" value="Sign Up">
         </form>

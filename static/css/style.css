@@ -208,10 +208,9 @@ input[type="number"] {
 }
 
 table {
-  margin-top: 3rem;
   width: 100%;
   border-collapse: collapse;
-  border: 1px solid #000;
+  border: 1px solid black;
 }
 
 th {
@@ -257,6 +256,11 @@ td:nth-child(4) {
     font-size: 10px;
     padding: 2px;
   }
+  .logout-btn , #dlt_btn{
+    padding: 10px 10px; /* add padding to make button more clickable */
+    font-size: 0.8rem;
+  }
+  
 }
 
 @media (max-width: 350px) {
