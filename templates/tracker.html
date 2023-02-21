@@ -18,7 +18,7 @@
         </div>
 
         <div class="form-container">
-          <h2>Track your product's price</h2>
+          <h2 style="font-size:2rem">Track your product's price</h2>
           <form method="POST">
             {% csrf_token %}
             <label for="url-input">Product URL:</label>
@@ -29,10 +29,10 @@
 
             <input type="submit" value="Submit">
           </form>
-          <!--{% if product_added %}
-            <p style="color:red;">You can only track one product at a time. Please delete the existing product before adding a new one.</p>
-          {% endif %}-->
-          <p style="color:red;">{{ error_msg }}</p>
+          {% if not_amazon %}
+            <p style="color:red;">Please enter valid amazon product url</p>
+          {% endif %}
+          <p style="color:red;">{{ error_prod_limit_msg }}</p>
         </div>
 
         
@@ -71,9 +71,13 @@
 
           </table>
         </div>
+        <h2>* We will send you an email when the price of this product drops</h2>
         
-
       </div>
+
+      <footer>
+        <p>Made with ❤️ by <a href="https://github.com/MashymAli">Mashym Ali</a></p>
+    </footer>
       
 </body>
 </html>

@@ -33,8 +33,8 @@ class Command(BaseCommand):
                         actual_price = "Out of Stock"
                     
                     if actual_price != "Out of Stock":
-                        if product.target_price<=actual_price:
-                            print(f"Sending email to {user.email} for Product: {product.name}, URL: {product.url}, Target Price: {product.target_price} ,Actual Price: {actual_price}")
+                        if actual_price<=product.target_price:
+                            #print(f"Sending email to {user.email} for Product: {product.name}, URL: {product.url}, Target Price: {product.target_price} ,Actual Price: {actual_price}")
                             # Send the email to the user's email address
                             send_mail(
                                 f'Price of {product.name} dropped on Amazon. Check it out!', #email subject
@@ -43,5 +43,3 @@ class Command(BaseCommand):
                                 [user.email], #user's email address
                                 fail_silently=False,
                             )
-
-

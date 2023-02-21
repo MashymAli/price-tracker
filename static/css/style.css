@@ -238,6 +238,20 @@ td:nth-child(4) {
   overflow-x: auto;
 }
 
+/*Footer*/
+footer{
+  position: fixed;
+  bottom: 0;
+  height: 50px; /* adjust height as needed */
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+footer a{
+  color: white;
+}
+
 @media (max-width: 1024px) {
   .table-container {
     flex-direction: column;
@@ -249,6 +263,7 @@ td:nth-child(4) {
     font-size: 12px;
     padding: 5px;
   }
+  
 }
 
 @media (max-width: 480px) {

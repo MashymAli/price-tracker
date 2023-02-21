@@ -60,39 +60,45 @@ def MainPage(request):
     
     # Check if user has already submitted a product
     has_product = Product.objects.filter(user=request.user).exists()
-    error_msg = ""
+    error_prod_limit_msg = ""
+    not_amazon = False
 
     if request.method == 'POST':
         form = ProductForm(request.POST)
         if has_product:
             # If there is already a product, display an error message
-            error_msg = 'You can only track one product at a time. Please delete the existing product before adding a new one.'
+            error_prod_limit_msg = 'You can only track one product at a time. Please delete the existing product before adding a new one.'
         else:
             if form.is_valid():
                 product = form.save(commit=False)
                 product.user = request.user
 
-                headers = {
-                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
-                    'Accept-Language': 'en-US,en;q=0.9',
-                    'Accept-Encoding': 'gzip, deflate, br',
-                    'Connection': 'keep-alive'
-                }
-            
-                page=requests.get(product.url,headers=headers)
-                #print(page.content)
-                soup = bs(page.content,"html.parser")
-                
-                try:
-                    product_name = soup.find('span', attrs={'class': 'a-size-large'}).get_text().strip()
-                    product_name = product_name.split(',')[0].strip()
-                except:
-                    product_name = "Product 1"
+                url = form.cleaned_data['url']
+                if 'amazon' not in url:
+                    not_amazon = True
+                else:
 
-                product.name=product_name
+                    headers = {
+                        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+                        'Accept-Language': 'en-US,en;q=0.9',
+                        'Accept-Encoding': 'gzip, deflate, br',
+                        'Connection': 'keep-alive'
+                    }
                 
-                product.save()
-                return redirect('tracker')
+                    page=requests.get(product.url,headers=headers)
+                    #print(page.content)
+                    soup = bs(page.content,"html.parser")
+                    
+                    try:
+                        product_name = soup.find('span', attrs={'class': 'a-size-large'}).get_text().strip()
+                        product_name = product_name.split(',')[0].strip()
+                    except:
+                        product_name = "Product 1"
+
+                    product.name=product_name
+                    
+                    product.save()
+                    return redirect('tracker')
             else:
                 print(form.errors)
     else:
@@ -102,7 +108,8 @@ def MainPage(request):
     context = {
         'username': username,
         'products': products,
-        'error_msg': error_msg,
+        'error_prod_limit_msg': error_prod_limit_msg,
+        'not_amazon':not_amazon,
         'form': form,
     }
 
