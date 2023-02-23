@@ -263,7 +263,6 @@ footer a{
     font-size: 12px;
     padding: 5px;
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -274,6 +273,10 @@ footer a{
   .logout-btn , #dlt_btn{
     padding: 10px 10px; /* add padding to make button more clickable */
     font-size: 0.8rem;
+  }
+  footer{
+    position: relative;
+    height: auto;
   }
   
 }
