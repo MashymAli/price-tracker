@@ -2,9 +2,9 @@
 Amazon price tracker which tracks price of your product and send you an email if product's price drops.
 
 ## Description
-Frontend: HTML, CSS
-Backend: Python Django
-Libraries used: BeautifulSoup for scrapinf prices of products from amazon
+**Frontend:** HTML, CSS </br>
+**Backend:** Python Django</br>
+**Libraries used:** BeautifulSoup for scraping prices of products from amazon website.
 
 ## Running on your system
 * Download all modules used in this project from requirements.txt file.
